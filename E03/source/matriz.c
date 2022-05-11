@@ -3,7 +3,7 @@
 #include "matriz.h"
 
 struct matriz{
-
+    
     int linhas;
     int colunas;
     int ** matriz;
@@ -11,17 +11,18 @@ struct matriz{
 
 Matriz* inicializaMatriz (int nlinhas, int ncolunas){
 
+    // Alocacao do objeto "Matriz"
     Matriz* matriz_retorno = (Matriz*) malloc(sizeof(Matriz));
 
+    // Alocacao dos elementos da matriz
     matriz_retorno -> matriz = (int**) malloc(nlinhas * sizeof(int*));
-
-    
 
     for (int i = 0; i < nlinhas; i++){
 
         matriz_retorno -> matriz[i] = (int*) malloc(ncolunas * sizeof(int));  
     }
 
+    // Inicializacao dos outros valores
     matriz_retorno -> linhas = nlinhas;
     matriz_retorno -> colunas = ncolunas;
 
@@ -39,29 +40,33 @@ void imprimeMatriz(Matriz* mat){
     int ncolunas = mat -> colunas;
     int ** matriz = mat -> matriz;
 
-    printf("[");
     for (int i = 0; i < nlinhas; i++){
         
+        // (1), (2) e (3) Tratam da formatacao da saida
+
+
+        //---(1)
         if (i > 0)
             printf(" [");
         else
-            printf("[");
+            printf("[[");
         
 
         for(int j = 0; j < ncolunas; j++){
 
             printf("%d", matriz[i][j]);
 
+            // ---(2)
             if(j < ncolunas-1)
                 printf(", ");
         }
 
+        // ---(3)
         if (i < nlinhas - 1)
             printf("]\n");
         else
-            printf("]");
+            printf("]]");
     }
-    printf("]");
 }
 
 void destroiMatriz(Matriz* mat){
