@@ -18,7 +18,7 @@ H_FILES = $(wildcard ./source/*.h)
 O_FILES = $(subst .c,.o,$(subst source,objects,$(C_FILES)))
 
 #Todas as flags usadas na compilacao
-CC_FLAGS = 	-W -Wall -pedantic -lm
+CC_FLAGS = 	-g -W -Wall -pedantic -lm
 
 #Para executar tudo basta criar a pasta dos objetos e compilar todo o projeto
 all: ObjFolder $(PROJ_NAME)

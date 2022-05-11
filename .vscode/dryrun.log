@@ -1,0 +1,6 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/phillyp/LAB_ED_3periodo'
+make: Leaving directory '/home/phillyp/LAB_ED_3periodo'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+
