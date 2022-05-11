@@ -7,7 +7,7 @@ int main(){
 
     for (int i = 0 ; i < 5; i++){
         for(int j = 0; j < 5; j++){
-           modificaElemento(minhaMatriz, i, j, i+j);
+           modificaElemento(minhaMatriz, i, j, 0);
         }
     }
 
