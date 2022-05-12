@@ -41,9 +41,37 @@ int main(){
     printf("\n");
 
     printf("\n");
-    printf("elemento [3][3] = %d", recuperaElemento(minhaMatriz2, 1, 1));
+    printf("elemento [3][3] = %d", recuperaElemento(minhaMatriz2, 3, 3));
     printf("\n");
 
+    Matriz* minhaMatriz_trp = transposta(minhaMatriz);
+
+    printf("\n");
+    printf("Matriz01-Transposta -> %d X %d", recuperaNLinhas(minhaMatriz_trp), recuperaNColunas(minhaMatriz_trp));
+    printf("\n");
+
+    imprimeMatriz(minhaMatriz_trp);
+    printf("\n");
+
+    printf("\n");
+    printf("elemento [3][3] = %d", recuperaElemento(minhaMatriz_trp, 3, 3));
+    printf("\n");
+
+    Matriz* minhaMatrizXminhaMatriz2 = multiplicacao(minhaMatriz, minhaMatriz2);
+
+    printf("\n");
+    printf("Matriz01 * Matriz02 -> %d X %d", recuperaNLinhas(minhaMatrizXminhaMatriz2), recuperaNColunas(minhaMatrizXminhaMatriz2));
+    printf("\n");
+
+    imprimeMatriz(minhaMatrizXminhaMatriz2);
+    printf("\n");
+
+    printf("\n");
+    printf("elemento [3][3] = %d", recuperaElemento(minhaMatrizXminhaMatriz2, 3, 3));
+    printf("\n");
+
+    destroiMatriz(minhaMatrizXminhaMatriz2);
+    destroiMatriz(minhaMatriz_trp);
     destroiMatriz(minhaMatriz2); 
     destroiMatriz(minhaMatriz);
 
